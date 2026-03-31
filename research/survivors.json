@@ -1,0 +1,62 @@
+[
+  {
+    "id": "H1",
+    "claim": "The factory is a cognitive compiler that translates narrative intent into scroll-optimized instruction sequences targeting the 50 bits/sec conscious attention bottleneck, exploiting pre-attentive parallel channels (Gestalt grouping, motion, color) to achieve effective throughput gains of 3-5x over conventional page layouts.",
+    "grounding": "Information theory: Shannon channel capacity applied to human attention. Pre-attentive processing (~200ms, parallel) bypasses the conscious bottleneck (~50 bits/sec, serial), creating effectively parallel information channels.",
+    "strongest_objection": "The 'compiler for human attention' metaphor has existed in HCI literature for decades. The throughput gain claim (3-5x) is speculative \u2014 no published study measures effective information throughput of scrollytelling vs. static pages in bits/sec equivalents.",
+    "falsification_test": "Measure information recall and emotional impact per scroll-second in controlled studies. If scrollytelling users do not demonstrate measurably higher information retention per unit time than static page users, the compiler analogy adds no explanatory power.",
+    "falsifiable": true,
+    "novelty_score": 3,
+    "evidence_score": 3,
+    "fragility_score": 3,
+    "leverage_score": 4
+  },
+  {
+    "id": "H3",
+    "claim": "The factory is an attentional arbitrage machine exploiting the economic inefficiency that most web content optimizes for minimizing time-on-page when attention-time is actually the primary convertible asset \u2014 scrollytelling converts attention-minutes to emotional commitment at 5-10x the rate of conventional landing pages, and the factory collapses production cost to make this arbitrage scalable.",
+    "grounding": "Economics: attention is a scarce commodity with a measurable market price (CPM/CPC). If scrollytelling converts attention-minutes to outcomes at higher rates, the delta is capturable economic value. Research shows 93% higher engagement, +8.4% to +40% conversion lift, dwell time 5-10 min vs 37 sec average.",
+    "strongest_objection": "The 5-10x conversion rate claim cherry-picks top performers. Median scrollytelling may perform only marginally better than conventional pages while costing 5-20x more to produce. If the factory cannot reduce production cost below the conversion value delta, the arbitrage is negative.",
+    "falsification_test": "Track production cost (agent compute time + human review time) and conversion rate lift across 20+ factory-produced experiences vs. conventional alternatives. If factory production cost exceeds 3x the incremental conversion value per experience, the economics do not close.",
+    "falsifiable": true,
+    "novelty_score": 4,
+    "evidence_score": 4,
+    "fragility_score": 4,
+    "leverage_score": 5
+  },
+  {
+    "id": "H4",
+    "claim": "The factory's product is a finite perceptual grammar \u2014 a bounded set of cognitively-valid scene compositions and scroll-driven transitions \u2014 that constrains the infinite design space to combinations respecting Gestalt laws, attention budgets, and narrative pacing rules, making the agents' task tractable without reducing output to templates.",
+    "grounding": "Information theory: creative constraint as lossy compression. A context-free grammar with N scene primitives and M transition rules generates a combinatorially vast but bounded space. The grammar is the factory's moat \u2014 it encodes the difference between 'technically working animation' and 'cognitively valid narrative flow.'",
+    "strongest_objection": "Award-winning scrollytelling often wins because of a specific creative decision that breaks convention. A grammar codifies convention by definition. If the grammar cannot express what makes Cartier's focus-racking or Ponpon Mania's liquid WebGL transitions special, it produces competent mediocrity, never S-tier work.",
+    "falsification_test": "Attempt to decompose 20 Awwwards-winning scrollytelling sites into the grammar's primitives. If more than 25% require novel visual techniques not expressible as grammar combinations, the grammar is insufficient for S-tier production.",
+    "falsifiable": true,
+    "novelty_score": 4,
+    "evidence_score": 3,
+    "fragility_score": 2,
+    "leverage_score": 5
+  },
+  {
+    "id": "H5",
+    "claim": "The factory's primary value is autonomous validation, not autonomous creation \u2014 the real bottleneck in scrollytelling production is QA across browsers, viewports, motion preferences, and performance thresholds, which scales as O(complexity x browser_matrix x viewport_matrix). The Playwright-based autonomous QA system collapses this to near-constant cost, making scrollytelling economically viable at scale.",
+    "grounding": "Economics: manual QA cost scales linearly with test matrix size. Scrollytelling has an exceptionally large test matrix (continuous scroll positions x viewport sizes x browsers x motion preferences x performance thresholds). Automation collapses linear cost to amortized constant cost per additional test case.",
+    "strongest_objection": "Playwright visual regression works for static UI screenshots. Scroll-driven animation QA requires validating temporal sequences, easing curves, and perceptual smoothness across continuous scroll positions \u2014 a fundamentally harder problem than snapshot comparison. The self-healing loop assumes the Auditor agent can diagnose visual diffs back to specific animation parameters, which requires causal reasoning current AI handles unreliably.",
+    "falsification_test": "Run the autonomous QA system and a manual QA team on the same 10 scrollytelling experiences. If the automated system misses more than 20% of issues the manual team catches (particularly timing, easing, and perceptual smoothness issues), autonomous QA is insufficient for S-tier quality.",
+    "falsifiable": true,
+    "novelty_score": 4,
+    "evidence_score": 3,
+    "fragility_score": 2,
+    "leverage_score": 5
+  },
+  {
+    "id": "H6",
+    "claim": "The factory's differentiator is a measurable cognitive load profiler that uses Chrome DevTools Protocol metrics (frame times, paint events, layout shifts) combined with heuristic Gestalt complexity scores (element count per viewport, contrast ratios, spatial frequency analysis) to produce a quantitative 'cognitive load curve' at each scroll position, optimizable against Duarte's sparkline engagement target.",
+    "grounding": "Information theory: measurable signal-to-noise ratio at each scroll position. Frame time data is objective; Gestalt complexity heuristics (proximity clustering coefficient, similarity entropy, visual weight distribution) are computable. The sparkline target provides a reference curve to optimize against.",
+    "strongest_objection": "Heuristic cognitive load scores based on visual complexity metrics have not been validated as predictors of actual user engagement in scrollytelling contexts. Frame times measure rendering performance, not cognitive experience. High visual complexity might indicate either 'overwhelming' or 'rich and engaging' depending on context the heuristic cannot capture.",
+    "falsification_test": "Compute heuristic cognitive load profiles for 30 scrollytelling experiences with known engagement metrics (scroll completion rate, time-per-section, click-through rate). If Pearson correlation between heuristic scores and engagement metrics is below 0.4, the profiler optimizes a proxy that does not track the target.",
+    "falsifiable": true,
+    "novelty_score": 4,
+    "evidence_score": 3,
+    "fragility_score": 3,
+    "leverage_score": 4
+  }
+]

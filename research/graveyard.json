@@ -1,0 +1,28 @@
+[
+  {
+    "id": "H2",
+    "claim": "The factory's core innovation is treating scroll position as a user-controlled absolute time coordinate that decouples animation timing from wall-clock time, creating a temporal medium where every coordinate in the scroll phase space must yield a deterministic, coherent visual state.",
+    "grounding": "Physics: scroll position maps to a continuous phase space where each coordinate must produce a deterministic visual output. The factory is a state machine generator ensuring coherence across the full scroll domain.",
+    "strongest_objection": "This is a description of how GSAP ScrollTrigger already works, not a novel architectural thesis. Treating scroll as a timeline scrub is the established paradigm, not an insight.",
+    "falsification_test": "If A/B testing shows auto-play video narratives consistently match or exceed scroll-driven narratives in dwell time, completion rate, and conversion across 10+ test cases, user-controlled temporal pacing offers no engagement advantage.",
+    "falsifiable": true,
+    "novelty_score": 2,
+    "evidence_score": 4,
+    "fragility_score": 4,
+    "leverage_score": 3,
+    "cause_of_death": "Insufficient novelty (2/5) \u2014 restates conventional wisdom"
+  },
+  {
+    "id": "H7",
+    "claim": "The factory achieves full human removal from the creative execution loop \u2014 a creative brief enters, a deployed scrollytelling experience exits \u2014 with humans remaining only on the policy loop (brief approval, final review), changing the production cost function from O(human_hours x complexity) to O(compute_cost x complexity) where compute cost falls exponentially.",
+    "grounding": "Post-human architecture: human attention is the scarcest production resource. Removing humans from execution fundamentally changes the cost curve. Compute cost per FLOP has fallen ~10x every 5 years for decades.",
+    "strongest_objection": "Current AI cannot reliably execute creative aesthetic judgments \u2014 animation easing selection, typographic pairing, color narrative, scroll pacing \u2014 at the quality level required for Awwwards recognition. The 'taste gap' between competent and exceptional is precisely where human judgment remains irreplaceable. This hypothesis conflates capability trajectory (AI will get better) with current capability (AI cannot do this now).",
+    "falsification_test": "Produce 10 scrollytelling experiences with zero human intervention between brief and deployment. Submit to professional designers for blind evaluation alongside 10 human-produced experiences. If evaluators identify AI-produced work at >70% accuracy, the aesthetic judgment gap is real and the full-removal thesis fails.",
+    "falsifiable": true,
+    "novelty_score": 2,
+    "evidence_score": 2,
+    "fragility_score": 2,
+    "leverage_score": 4,
+    "cause_of_death": "Empirical grounding too low (2/5) | Insufficient novelty (2/5) \u2014 restates conventional wisdom"
+  }
+]

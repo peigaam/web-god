@@ -1,0 +1,9 @@
+{
+  "description": "Patterns to flag during build gate audit",
+  "patterns": [
+    "#00D4FF",
+    "bg-white",
+    "console.log"
+  ],
+  "notes": "Customize this list for your project. Add legacy colors, deprecated class names, or any patterns that should not appear in production code."
+}

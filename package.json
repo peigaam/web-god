@@ -1,0 +1,11 @@
+{
+  "name": "web-god",
+  "version": "0.1.0",
+  "description": "All-in-one web development intelligence layer",
+  "author": "inspectre",
+  "license": "MIT",
+  "bin": { "web-god": "./bin/cli.js" },
+  "files": ["agents/", "skills/", "tools/", "hooks/", "templates/", "bin/", "install.sh"],
+  "engines": { "node": ">=18.0.0" },
+  "keywords": ["web-development", "claude-code", "ai-agents", "scrollytelling", "performance", "accessibility", "security", "seo", "design-system", "devops"]
+}

@@ -1,5 +1,6 @@
 ---
 name: scrollytelling-typographer
+tier: core
 description: >
   Scrollytelling typographic system designer. Specializes in scroll-driven typographic reveals,
   kinetic type animations, variable font weight transitions, and reading-pace-matched text

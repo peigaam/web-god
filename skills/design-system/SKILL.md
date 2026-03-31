@@ -22,3 +22,14 @@ Persist preference in localStorage + respect prefers-color-scheme.
 
 ## Component Convention
 All components: size (sm/md/lg), variant (solid/outline/ghost), disabled, loading, children, className.
+
+## Review Checklist
+- [ ] Token hierarchy follows 3-tier system (primitive → semantic → component)
+- [ ] Dark mode implemented via Tier 2 token swap
+- [ ] All colors pass WCAG AA contrast in both themes
+- [ ] Maximum 2 font families (3 if monospace needed)
+- [ ] Component API conventions consistent (size, variant, disabled props)
+
+**Human checkpoint:** Present the token definitions and theme configuration for approval before building components.
+
+Consult `references/design-system-principles.md` for domain-specific guidelines.

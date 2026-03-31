@@ -1,7 +1,7 @@
 {
   "description": "Patterns to flag during build gate audit",
   "patterns": [
-    "#00D4FF",
+    "#FF0000",
     "bg-white",
     "console.log"
   ],

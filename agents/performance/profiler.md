@@ -1,5 +1,6 @@
 ---
 name: performance-profiler
+tier: reference
 description: >
   Web performance profiler and optimizer. Analyzes Core Web Vitals, bundle sizes, rendering
   performance, network waterfalls, runtime bottlenecks. Use when "optimize performance",

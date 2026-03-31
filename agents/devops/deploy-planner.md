@@ -1,5 +1,6 @@
 ---
 name: devops-deploy-planner
+tier: reference
 description: >
   DevOps deployment and CI/CD agent. Designs CI/CD pipelines, Docker configs, deployment
   strategies, environment management. Use when "deploy", "CI/CD", "Docker", "GitHub Actions",

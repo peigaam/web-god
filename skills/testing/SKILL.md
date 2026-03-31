@@ -28,3 +28,14 @@ function TestProviders({ children }) {
   );
 }
 ```
+
+## Review Checklist
+- [ ] Testing strategy defined per layer (unit/integration/E2E/visual)
+- [ ] Infrastructure configured (Vitest + Testing Library + Playwright)
+- [ ] Integration tests cover critical user flows
+- [ ] Coverage meets standards (100% utils, 80% components, 70% overall)
+- [ ] No flaky tests in main branch
+
+**Human checkpoint:** Present the testing strategy for approval before writing tests.
+
+Consult `references/testing-principles.md` for domain-specific guidelines.

@@ -1,5 +1,6 @@
 ---
 name: seo-auditor
+tier: reference
 description: >
   Technical SEO and meta optimization agent. Audits meta tags, structured data (JSON-LD),
   Open Graph, sitemap, robots.txt, canonical URLs, Core Web Vitals impact on SEO, content

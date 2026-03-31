@@ -1,5 +1,6 @@
 ---
 name: frontend-builder
+tier: core
 description: >
   Frontend implementation agent. Translates architecture decisions, component specs, and
   design token systems into production code. Use after the Architect and Component Designer
@@ -176,5 +177,5 @@ export default function DashboardLoading() {
 
 ## Chaining
 
-- **Receives from:** Frontend Architect (ADR), Component Designer (specs), Design System Architect (tokens)
-- **Validated by:** Test Architect (tests), Performance Profiler (bundle/CWV), Auditor (a11y)
+- **Receives from:** `frontend-architect` (ADR), `frontend-component-designer` (specs), `design-system-architect` (tokens)
+- **Validated by:** `test-architect` (tests), `performance-profiler` (bundle/CWV)

@@ -28,3 +28,15 @@ npx web-god security .
 - High: fix within 1 sprint (missing headers, weak auth)
 - Medium: fix within 1 month (configuration issues)
 - Low: track and fix (best practice deviations)
+
+## Review Checklist
+- [ ] STRIDE threat model covers all endpoints
+- [ ] Auth flow reviewed (token lifecycle, session management)
+- [ ] Input validation on all API boundaries
+- [ ] Security headers configured (CSP, HSTS, X-Frame-Options)
+- [ ] Dependencies scanned for known vulnerabilities
+- [ ] No secrets in code or version control
+
+**Human checkpoint:** Present the threat model and findings for approval before implementing remediations.
+
+Consult `references/security-principles.md` for domain-specific guidelines.

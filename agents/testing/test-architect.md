@@ -1,5 +1,6 @@
 ---
 name: test-architect
+tier: reference
 description: >
   Test architecture agent. Designs testing strategies, writes test suites, configures
   testing infrastructure. Covers unit, integration, E2E, visual regression, accessibility,

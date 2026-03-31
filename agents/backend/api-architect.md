@@ -1,5 +1,6 @@
 ---
 name: backend-api-architect
+tier: core
 description: >
   Backend API architecture agent. Designs REST/GraphQL schemas, database models, auth flows,
   middleware chains, error handling. Use when designing APIs, database schemas, auth, or
@@ -72,5 +73,5 @@ Queue (BullMQ/Inngest), pattern (202 + poll), retry (3x exponential), dead lette
 - Input validation at API boundary using Zod.
 
 ## Chaining
-- **Hands off to:** Builder, Security Reviewer
-- **Read by:** Frontend Architect (API contract alignment)
+- **Hands off to:** `frontend-builder`, `security-threat-modeler`
+- **Read by:** `frontend-architect` (API contract alignment)

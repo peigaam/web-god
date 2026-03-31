@@ -1,5 +1,6 @@
 ---
 name: design-system-architect
+tier: reference
 description: >
   Design system and token architecture agent. Designs token hierarchies (colors, spacing,
   typography, shadows, motion), component conventions, theming, dark mode. Use when

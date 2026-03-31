@@ -40,6 +40,14 @@ elif [ -f "remix.config.js" ]; then
   FRAMEWORK="remix"
 fi
 echo ">> Detected framework: $FRAMEWORK"
+
+# Detect source directory
+if [ -d "$SRC_DIR" ]; then SRC_DIR="$SRC_DIR"
+elif [ -d "$PROJECT_ROOT/app" ]; then SRC_DIR="$PROJECT_ROOT/app"
+elif [ -d "$PROJECT_ROOT/lib" ]; then SRC_DIR="$PROJECT_ROOT/lib"
+else SRC_DIR="$PROJECT_ROOT"
+fi
+echo ">> Source directory: $SRC_DIR"
 echo ""
 
 # ── Step 1: Orphaned Import Check ──
@@ -52,7 +60,7 @@ if [ ${#DELETED_COMPONENTS[@]} -gt 0 ]; then
     BASENAME=$(basename "$BASENAME" .js)
     MATCHES=$(grep -rn --include="*.tsx" --include="*.ts" --include="*.jsx" --include="*.js" \
       -E "(from\s+['\"].*${BASENAME}['\"]|import\(['\"].*${BASENAME}['\"])" \
-      "$PROJECT_ROOT/src" 2>/dev/null || true)
+      "$SRC_DIR" 2>/dev/null || true)
     if [ -n "$MATCHES" ]; then
       echo "  [FATAL] Orphaned import of deleted '${BASENAME}':"
       echo "$MATCHES"
@@ -75,18 +83,18 @@ if [ -n "$KILL_LIST" ] && [ -f "$KILL_LIST" ]; then
   # Read kill list JSON: expects { "patterns": ["pattern1", "pattern2"], "description": "..." }
   while IFS= read -r pattern; do
     HITS=$(grep -rn --include="*.tsx" --include="*.ts" --include="*.css" --include="*.jsx" \
-      "$pattern" "$PROJECT_ROOT/src" 2>/dev/null | head -5 || true)
+      "$pattern" "$SRC_DIR" 2>/dev/null | head -5 || true)
     if [ -n "$HITS" ]; then
       echo "  [WARN] Kill list pattern '$pattern' found:"
       echo "$HITS"
       KILL_FOUND=1
     fi
-  done < <(python3 -c "import json,sys; [print(p) for p in json.load(open('$KILL_LIST')).get('patterns',[])]" 2>/dev/null || true)
+  done < <(node -e "const d=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'));(d.patterns||[]).forEach(p=>console.log(p))" "$KILL_LIST" 2>/dev/null || true)
 fi
 
 # Default checks (common issues)
 CONSOLE_LOGS=$(grep -rn --include="*.tsx" --include="*.ts" --include="*.jsx" \
-  "console\.log\|console\.debug" "$PROJECT_ROOT/src" 2>/dev/null | grep -v "node_modules" | grep -v ".test." | head -5 || true)
+  "console\.log\|console\.debug" "$SRC_DIR" 2>/dev/null | grep -v "node_modules" | grep -v ".test." | head -5 || true)
 if [ -n "$CONSOLE_LOGS" ]; then
   echo "  [WARN] Console.log statements found in production code:"
   echo "$CONSOLE_LOGS"
@@ -95,7 +103,7 @@ if [ -n "$CONSOLE_LOGS" ]; then
 fi
 
 TODO_COUNT=$(grep -rn --include="*.tsx" --include="*.ts" --include="*.jsx" \
-  "TODO\|FIXME\|HACK\|XXX" "$PROJECT_ROOT/src" 2>/dev/null | grep -v "node_modules" | wc -l | tr -d ' ')
+  "TODO\|FIXME\|HACK\|XXX" "$SRC_DIR" 2>/dev/null | grep -v "node_modules" | wc -l | tr -d ' ')
 if [ "$TODO_COUNT" -gt 0 ]; then
   echo "  [INFO] $TODO_COUNT TODO/FIXME/HACK comments found."
 fi

@@ -1,5 +1,6 @@
 ---
 name: scrollytelling-choreographer
+tier: core
 description: >
   Scrollytelling motion choreographer agent. Translates the Director's narrative storyboard
   into Lenis scroll configuration, GSAP/Framer Motion animation timelines, easing functions,

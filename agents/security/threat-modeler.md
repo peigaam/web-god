@@ -1,5 +1,6 @@
 ---
 name: security-threat-modeler
+tier: reference
 description: >
   Web application security agent. Threat modeling, code review for vulnerabilities,
   auth design review, OWASP Top 10 compliance. Use when "review security", "audit

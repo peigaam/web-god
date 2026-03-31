@@ -1,5 +1,6 @@
 ---
 name: scrollytelling-compositor
+tier: core
 description: >
   Scrollytelling visual compositor agent. Manages the visual layer stack including z-index
   ordering, blend modes, parallax depth sorting, image/video lazy loading, WebGL shader

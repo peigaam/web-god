@@ -1,5 +1,6 @@
 ---
 name: scrollytelling-auditor
+tier: core
 description: >
   Scrollytelling QA auditor agent powered by Playwright. Writes and executes visual regression
   tests, scroll performance benchmarks (60fps enforcement), accessibility checks, cross-browser

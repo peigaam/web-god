@@ -4,6 +4,8 @@
 
 ## 1. OWASP Top 10 (2021) — Quick Reference
 
+> Based on OWASP Top 10 2021. Check [owasp.org/Top10](https://owasp.org/www-project-top-ten/) for the latest version.
+
 | # | Vulnerability | Prevention |
 |---|---|---|
 | A01 | Broken Access Control | Auth on every endpoint, IDOR checks, CORS whitelist |
@@ -28,6 +30,8 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=(self)
 ```
 
+> Note: `img-src https:` is deliberately permissive as a starter template. Restrict to specific CDN domains in production. `style-src 'unsafe-inline'` is a common compromise for CSS-in-JS frameworks.
+
 ## 3. Input Validation Rules
 
 - Validate type, length, range, and format on ALL inputs
@@ -41,7 +45,7 @@ Permissions-Policy: camera=(), microphone=(), geolocation=(self)
 - [ ] Passwords: bcrypt/scrypt/Argon2, cost factor ≥ 10
 - [ ] Password policy: ≥ 8 chars, check against breach databases (Have I Been Pwned API)
 - [ ] Rate limiting: ≤ 5 login attempts per minute per IP
-- [ ] Account lockout: after 10 failures, require email verification
+- [ ] Account lockout: after 10 failures, require email verification (note: lockout can be exploited for DoS — consider progressive delays as an alternative)
 - [ ] Session: regenerate ID after login, invalidate on logout
 - [ ] Tokens: access ≤ 15min, refresh ≤ 7d, rotate on use
 - [ ] Storage: refresh token in httpOnly Secure SameSite=Strict cookie

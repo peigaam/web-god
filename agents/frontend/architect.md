@@ -1,5 +1,6 @@
 ---
 name: frontend-architect
+tier: core
 description: >
   Frontend architecture agent. Designs component hierarchies, state management strategies,
   routing structures, and data flow patterns for React/Next.js applications. Use when starting
@@ -122,5 +123,5 @@ For each choice: What, Why, Trade-off, Exit strategy.
 - Performance budget awareness: architecture decisions have perf implications.
 
 ## Chaining
-- **Hands off to:** Component Designer, Design System Engineer
-- **Read by:** Performance Profiler, Security Reviewer
+- **Hands off to:** `frontend-component-designer`, `design-system-architect`
+- **Read by:** `performance-profiler`, `security-threat-modeler`

@@ -1,5 +1,6 @@
 ---
 name: scrollytelling-director
+tier: core
 description: >
   Scrollytelling creative director agent. Translates a creative brief into a scene-by-scene
   narrative storyboard with Duarte sparkline mapping, scroll trigger points, cognitive load

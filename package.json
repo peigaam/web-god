@@ -4,8 +4,45 @@
   "description": "All-in-one web development intelligence layer",
   "author": "inspectre",
   "license": "MIT",
-  "bin": { "web-god": "./bin/cli.js" },
-  "files": ["agents/", "skills/", "tools/", "hooks/", "templates/", "bin/", "install.sh"],
-  "engines": { "node": ">=18.0.0" },
-  "keywords": ["web-development", "claude-code", "ai-agents", "scrollytelling", "performance", "accessibility", "security", "seo", "design-system", "devops"]
+  "bin": {
+    "web-god": "./bin/cli.js"
+  },
+  "files": [
+    "agents/",
+    "skills/",
+    "tools/",
+    "examples/",
+    "hooks/git/",
+    "templates/",
+    "bin/",
+    "docs/",
+    "install.sh"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0",
+    "@testing-library/react": "^16.0.0",
+    "jsdom": "^25.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@types/react": "^19.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "web-development",
+    "claude-code",
+    "ai-agents",
+    "scrollytelling",
+    "performance",
+    "accessibility",
+    "security",
+    "seo",
+    "design-system",
+    "devops"
+  ]
 }

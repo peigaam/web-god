@@ -32,7 +32,9 @@ for skill_dir in "$SCRIPT_DIR"/skills/*/; do
   [ -d "$skill_dir" ] || continue
   skill_name=$(basename "$skill_dir")
   dest_dir="$SKILLS_DIR/webgod-${skill_name}"
-  rm -rf "$dest_dir"
+  if [ -d "$dest_dir" ]; then
+    mv "$dest_dir" "${dest_dir}.bak.$(date +%s)" 2>/dev/null || true
+  fi
   cp -r "$skill_dir" "$dest_dir"
   SKILL_COUNT=$((SKILL_COUNT + 1))
 done

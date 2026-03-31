@@ -28,5 +28,9 @@ Principles: Zod validation at boundary, service layer between routes and DB, rep
 
 ## Step 3: Validation
 ```bash
-npx tsc --noEmit && npm test && npx web-god security .
+npx tsc --noEmit && npm test && npm audit --audit-level=high
 ```
+
+Consult `references/backend-principles.md` for domain-specific guidelines.
+
+**Human checkpoint:** Present the API spec and database schema for approval before implementing.

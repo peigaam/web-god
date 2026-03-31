@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run hook tests
+        run: npm test
+
+      - name: Verify CLI loads
+        run: node bin/cli.js --help
+
+      - name: Verify install script
+        run: CLAUDE_HOME=/tmp/test-claude bash install.sh
+
+      - name: Verify installed agent count
+        run: |
+          AGENT_COUNT=$(find /tmp/test-claude/agents -name "webgod-*.md" | wc -l)
+          echo "Installed agents: $AGENT_COUNT"
+          if [ "$AGENT_COUNT" -lt 10 ]; then
+            echo "FAIL: Expected at least 10 agents, found $AGENT_COUNT"
+            exit 1
+          fi
+
+      - name: Verify expected files exist
+        run: |
+          for f in LICENSE README.md package.json install.sh bin/cli.js \
+                   tools/build-gate/gate.sh tools/dom-auditor/index.js \
+                   docs/AGENT_GUIDE.md docs/ADDING_A_DOMAIN.md \
+                   .claude/CLAUDE.md; do
+            if [ ! -f "$f" ]; then
+              echo "FAIL: Expected file $f not found"
+              exit 1
+            fi
+          done
+          echo "All expected files present"
+
+      - name: Validate agent frontmatter
+        run: |
+          for f in agents/**/*.md; do
+            if ! head -1 "$f" | grep -q "^---$"; then
+              echo "FAIL: $f missing YAML frontmatter"
+              exit 1
+            fi
+            if ! grep -q "^name:" "$f"; then
+              echo "FAIL: $f missing name field"
+              exit 1
+            fi
+            if ! grep -q "^description:" "$f"; then
+              echo "FAIL: $f missing description field"
+              exit 1
+            fi
+          done
+          echo "All agent frontmatter valid"
+
+      - name: Shellcheck
+        run: |
+          sudo apt-get install -y shellcheck
+          shellcheck tools/build-gate/gate.sh hooks/git/pre-commit hooks/git/commit-msg hooks/git/pre-push install.sh

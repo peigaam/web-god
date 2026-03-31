@@ -1,8 +1,8 @@
 ---
 name: frontend
 description: >
-  End-to-end frontend architecture and implementation skill. Orchestrates Frontend Architect,
-  Component Designer, and Design System Engineer. Use when "build a web app", "design a
+  End-to-end frontend architecture and implementation skill. Orchestrates frontend-architect,
+  frontend-component-designer, and design-system-architect. Use when "build a web app", "design a
   frontend", "structure a React/Next.js project", "create a component library".
 ---
 

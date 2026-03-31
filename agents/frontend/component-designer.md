@@ -1,5 +1,6 @@
 ---
 name: frontend-component-designer
+tier: core
 description: >
   Frontend component design agent. Designs component APIs, prop interfaces, composition
   patterns, and accessibility contracts. Use when designing new components, refactoring
@@ -73,5 +74,5 @@ Variants:
 - You design APIs, not implementations.
 
 ## Chaining
-- **Receives from:** Frontend Architect
-- **Hands off to:** Design System Engineer, Builder
+- **Receives from:** `frontend-architect`
+- **Hands off to:** `design-system-architect`, `frontend-builder`

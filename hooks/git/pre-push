@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+# web-god pre-push hook
+# Runs type check and tests before pushing
+# Install: cp hooks/git/pre-push .husky/pre-push && chmod +x .husky/pre-push
+
+echo ">> Pre-push: Type checking..."
+npx tsc --noEmit
+if [ $? -ne 0 ]; then
+  echo "❌ TypeScript errors found. Fix before pushing."
+  exit 1
+fi
+echo "  ✅ Types clean"
+
+echo ">> Pre-push: Running tests..."
+npm test -- --run 2>/dev/null || npm test 2>/dev/null
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Fix before pushing."
+  exit 1
+fi
+echo "  ✅ Tests passed"
+
+echo ">> Pre-push: Building..."
+npm run build 2>/dev/null
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Fix before pushing."
+  exit 1
+fi
+echo "  ✅ Build passed"
+
+echo ""
+echo "✅ All pre-push checks passed. Pushing..."

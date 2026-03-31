@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+# web-god commit-msg hook
+# Enforces conventional commit format
+# Install: cp hooks/git/commit-msg .husky/commit-msg && chmod +x .husky/commit-msg
+
+# Use commitlint if available
+if command -v npx >/dev/null 2>&1 && [ -f "commitlint.config.js" ] || [ -f "commitlint.config.cjs" ] || [ -f ".commitlintrc.json" ]; then
+  npx --no -- commitlint --edit "$1"
+  exit $?
+fi
+
+# Fallback: basic conventional commit validation
+MSG=$(cat "$1")
+PATTERN="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?: .{1,72}$"
+
+if ! echo "$MSG" | head -1 | grep -qE "$PATTERN"; then
+  echo ""
+  echo "❌ Commit message does not follow Conventional Commits format."
+  echo ""
+  echo "Expected: <type>(<scope>): <description>"
+  echo ""
+  echo "Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+  echo ""
+  echo "Examples:"
+  echo "  feat(auth): add OAuth2 login flow"
+  echo "  fix(dashboard): resolve metric card overflow on mobile"
+  echo "  docs: update API endpoint documentation"
+  echo ""
+  echo "Your message: $MSG"
+  exit 1
+fi

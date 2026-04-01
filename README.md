@@ -36,6 +36,8 @@ CLAUDE.md files are never touched.
 
 No per-project configuration needed. Open Claude Code in any project and go.
 
+**📖 [Full Usage Guide →](docs/USAGE_GUIDE.md)** — Project-type playbooks, agent chaining patterns, quick reference card.
+
 ## What Makes This Different
 
 Two things no other package does:

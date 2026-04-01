@@ -1,9 +1,9 @@
-# NARRATIVE + COPYWRITING RESEARCH SWARM — 40-Agent Deep Intelligence
+# NARRATIVE + COPYWRITING RESEARCH SWARM — 45-Agent Deep Intelligence
 # Run from: /Users/inspectre/developer/web-god-pkg
 # Invoke: /swarm Execute the narrative research swarm per .claude/prompts/narrative-research-swarm.md
 # Purpose: Find the best-of-best frameworks for web narrative + copywriting before building
 
-You are the Conductor. Deploy a 40-agent research swarm to discover the definitive
+You are the Conductor. Deploy a 45-agent research swarm to discover the definitive
 frameworks, principles, and practitioners for web narrative strategy and copywriting.
 Every agent searches the LIVE WEB. No training data answers.
 
@@ -374,7 +374,7 @@ Report: The definitive 3-5 framework stack + justification + integration model.
 
 ## SYNTHESIS PROTOCOL
 
-After all 40 agents complete:
+After all 45 agents complete:
 
 ### The Arbiter synthesizes into:
 
@@ -390,15 +390,26 @@ Awareness levels × emotional needs × cultural context × reading behavior.
 **4. THE DESIGN-NARRATIVE BRIDGE** — How narrative dictates design:
 How story decisions cascade into typography, color, motion, layout, imagery.
 
-**5. THE INTEGRATION MODEL** — How these two new agents fit into web-god:
+**5. THE ANTI-NARRATIVE PLAYBOOK** — When and how to minimize story:
+Dashboard patterns, utility-first interfaces, enterprise tools, data-heavy products.
+The "minimum viable narrative" framework for non-storytelling products.
+
+**6. THE INTEGRATION MODEL** — How these two new agents fit into web-god:
 - Where Narrative Strategist sits in the pipeline (before Director? alongside?)
 - Where Copywriter sits (after design? during? on-demand?)
 - Which existing agents they chain with
 - What the skill frontmatter should look like
 - What the reference doc structure should be
+- How dashboard/web3/API products use these agents differently from landing pages
 
-**6. THE BRIEF TEMPLATE** — The universal narrative brief:
-The input that kicks off any web narrative project.
+**7. TOKEN ECONOMICS** — How web-god should manage orchestration cost:
+- Which agent chains are expensive vs cheap
+- When to use opus vs sonnet vs haiku per agent
+- Compressed handoff patterns between agents
+- Agent result caching strategies
+
+**8. THE BRIEF TEMPLATE** — The universal narrative brief:
+The input that kicks off any web narrative project (including non-narrative products).
 
 ### Write to: `audit/11-narrative-research-intelligence.md`
 
@@ -414,4 +425,59 @@ The input that kicks off any web narrative project.
 - Today is March 31, 2026. Prioritize recent sources.
 - Report honestly: if something is overhyped, say so
 
-Begin. Deploy all 40 agents. This builds the knowledge foundation for two new web-god domains.
+---
+
+## CLUSTER 6: THE GEMINI CRITIQUE — Backend, Dashboards, and Anti-Narrative (5 bonus agents)
+
+An external review flagged: "web-god has massive frontend bias. The backend is
+remarkably light." And: "Not everything is scrollytelling — dashboards, tools,
+and data-heavy apps need narrative too, but differently."
+
+These 5 agents address what narrative looks like when there's NO scroll story.
+
+**Agent 41 — Dashboard & admin panel narrative**
+Search: "dashboard UX writing", "admin panel copy patterns", "data-heavy product narrative",
+"B2B dashboard onboarding copy", "enterprise software storytelling"
+Mission: How do you apply narrative to products that are NOT storytelling experiences?
+Dashboards, admin panels, developer tools. What's the "story" of a dashboard?
+Empty states as narrative hooks? Onboarding as guided tour? Data labels as microcopy?
+Report: Non-storytelling narrative patterns + dashboard-specific copy frameworks.
+
+**Agent 42 — Web3/DeFi dashboard specific narrative**
+Search: "web3 dashboard UX", "DeFi interface copy", "wallet connection UX writing",
+"transaction status copy web3", "gas fee explanation UX"
+Mission: The specific copy challenges of web3 dashboards: explaining gas, transaction
+states, wallet connection flows, risk warnings, token approvals. How do you make
+blockchain complexity accessible through copy? What's different from traditional SaaS?
+Report: Web3 dashboard copy patterns + risk communication frameworks.
+
+**Agent 43 — Backend-as-story: API and developer narrative**
+Search: "API documentation storytelling", "developer experience narrative",
+"Stripe documentation narrative", "developer marketing copy", "API landing page"
+Mission: How do backend-first products (APIs, SDKs, infrastructure) tell their story?
+Stripe's documentation-as-product. Twilio's "magic" narrative. How do you make
+invisible infrastructure feel tangible through copy? Developer empathy in technical writing.
+Report: Developer product narrative frameworks + API storytelling patterns.
+
+**Agent 44 — Anti-narrative: when story gets in the way**
+Search: "over-designed web UX", "when storytelling hurts UX", "functional vs narrative web",
+"utility-first web design", "enterprise UX simplicity"
+Mission: When does narrative HURT the user experience? Data-heavy enterprise tools
+where users want efficiency, not story. Power users who skip onboarding. When is
+plain, direct, un-narrated UI the right answer? What's the minimum viable narrative?
+Report: Anti-narrative patterns + "minimum viable story" framework.
+
+**Agent 45 — Multi-agent token economics and orchestration cost**
+Search: "LLM agent token cost optimization", "multi-agent orchestration cost",
+"agent swarm token management", "reducing AI agent compute cost",
+"agent pipeline efficiency 2026"
+Mission: Gemini flagged token explosion as a risk in web-god's architecture.
+How do production multi-agent systems manage token cost? What are the patterns
+for efficient orchestration? Agent result caching? Compressed handoffs?
+When to use cheap models vs expensive ones?
+Report: Token optimization patterns + cost management strategies for agent swarms.
+
+---
+
+Begin. Deploy all 45 agents. This builds the knowledge foundation for two new web-god domains
+plus addresses the backend/dashboard narrative gap and token economics question.

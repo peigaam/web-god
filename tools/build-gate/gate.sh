@@ -103,7 +103,7 @@ if [ -n "$CONSOLE_LOGS" ]; then
 fi
 
 TODO_COUNT=$(grep -rn --include="*.tsx" --include="*.ts" --include="*.jsx" \
-  "TODO\|FIXME\|HACK\|XXX" "$SRC_DIR" 2>/dev/null | grep -v "node_modules" | wc -l | tr -d ' ')
+  "TODO\|FIXME\|HACK\|XXX" "$SRC_DIR" 2>/dev/null | grep -vc "node_modules" || true)
 if [ "$TODO_COUNT" -gt 0 ]; then
   echo "  [INFO] $TODO_COUNT TODO/FIXME/HACK comments found."
 fi

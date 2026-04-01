@@ -42,7 +42,7 @@ fi
 echo ">> Detected framework: $FRAMEWORK"
 
 # Detect source directory
-if [ -d "$SRC_DIR" ]; then SRC_DIR="$SRC_DIR"
+if [ -d "$PROJECT_ROOT/src" ]; then SRC_DIR="$PROJECT_ROOT/src"
 elif [ -d "$PROJECT_ROOT/app" ]; then SRC_DIR="$PROJECT_ROOT/app"
 elif [ -d "$PROJECT_ROOT/lib" ]; then SRC_DIR="$PROJECT_ROOT/lib"
 else SRC_DIR="$PROJECT_ROOT"

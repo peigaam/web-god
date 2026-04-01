@@ -1,8 +1,9 @@
 ---
 name: performance
 description: >
-  Web performance audit and optimization skill. Use when "optimize performance", "site is
-  slow", "improve Core Web Vitals", "reduce bundle size".
+  Audits web application performance including Core Web Vitals, bundle sizes, rendering
+  performance, and network waterfalls. Produces prioritized optimization plans.
+model: sonnet
 ---
 
 # Performance Skill

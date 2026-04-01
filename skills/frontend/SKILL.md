@@ -1,9 +1,10 @@
 ---
 name: frontend
 description: >
-  End-to-end frontend architecture and implementation skill. Orchestrates frontend-architect,
-  frontend-component-designer, and design-system-architect. Use when "build a web app", "design a
-  frontend", "structure a React/Next.js project", "create a component library".
+  Orchestrates frontend architecture and implementation. Produces Architecture Decision
+  Records, component specs, and validated implementations for React/Next.js applications.
+context: fork
+model: opus
 ---
 
 # Frontend Architecture Skill

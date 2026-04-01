@@ -1,8 +1,9 @@
 ---
 name: security
 description: >
-  Web application security audit skill. Use when "review security", "audit vulnerabilities",
-  "penetration test", "OWASP compliance".
+  Performs STRIDE threat modeling, OWASP 2025 compliance checking, and authentication
+  flow review. Produces security assessment reports with severity-rated findings.
+model: sonnet
 ---
 
 # Security Skill

@@ -1,12 +1,10 @@
 ---
 name: scrollytelling
 description: >
-  End-to-end scrollytelling production pipeline. Takes a creative brief and orchestrates
-  Director, Choreographer, Typographer, Compositor, Builder, and Auditor agents to produce
-  a validated Next.js scrollytelling experience with Lenis smooth scrolling and GSAP
-  scroll-driven animation. Use when the user asks to "build a scrollytelling page",
-  "create a scroll-driven experience", "make a narrative landing page", "build an
-  interactive story page", or provides a creative brief for scroll-based content.
+  Orchestrates a 5-agent scrollytelling production pipeline. Takes a creative brief
+  and produces a validated scroll-driven experience with GSAP, Lenis, and Playwright QA.
+context: fork
+model: opus
 ---
 
 # Scrollytelling Factory
@@ -22,6 +20,19 @@ Before starting, verify:
 4. The user has provided or will provide a creative brief
 
 If prerequisites are missing, help the user set them up before entering the pipeline.
+
+## Companion Skills
+
+The scrollytelling pipeline works best alongside these official ecosystem skills:
+
+- **greensock/gsap-skills** — Official GSAP Agent Skills covering ScrollTrigger,
+  timelines, easing, and animation patterns. Install separately if available.
+  web-god's Choreographer agent produces animation SPECS; GSAP skills help with
+  IMPLEMENTATION of those specs.
+
+If the official GSAP skills are installed, the Builder step can reference them
+for implementation details. If not, the Choreographer's spec + the scrollytelling
+reference doc contain sufficient guidance.
 
 ## Pipeline Overview
 

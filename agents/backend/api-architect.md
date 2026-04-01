@@ -1,6 +1,6 @@
 ---
 name: backend-api-architect
-tier: core
+tier: reference
 description: >
   Backend API architecture agent. Designs REST/GraphQL schemas, database models, auth flows,
   middleware chains, error handling. Use when designing APIs, database schemas, auth, or

@@ -1,8 +1,9 @@
 ---
 name: seo
 description: >
-  Technical SEO audit and optimization skill. Use when "SEO audit", "meta tags",
-  "structured data", "sitemap", "search ranking".
+  Audits technical SEO including meta tags, structured data, sitemaps, Open Graph,
+  and Core Web Vitals impact. Produces per-category score reports.
+model: sonnet
 ---
 
 # SEO Skill

@@ -1,8 +1,9 @@
 ---
 name: devops
 description: >
-  Deployment and CI/CD skill. Use when "deploy", "CI/CD pipeline", "Docker",
-  "GitHub Actions", "staging", "environment setup".
+  Designs CI/CD pipelines, Docker configurations, deployment strategies, and
+  environment management. Produces deployment runbooks and monitoring plans.
+model: sonnet
 ---
 
 # DevOps Skill

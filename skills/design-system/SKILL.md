@@ -1,8 +1,9 @@
 ---
 name: design-system
 description: >
-  Design system creation skill. Use when "create design system", "design tokens",
-  "component library", "dark mode", "theme", "brand colors".
+  Designs design token hierarchies, component API conventions, and theming systems
+  including dark mode. Targets the W3C DTCG token format.
+model: sonnet
 ---
 
 # Design System Skill

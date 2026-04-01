@@ -1,9 +1,9 @@
 ---
 name: backend
 description: >
-  Backend architecture and API design skill. Orchestrates API Architect for validated
-  backend systems. Use when "design an API", "build a backend", "create a database schema",
-  "set up authentication".
+  Designs backend API architecture including endpoint specs, database schemas,
+  auth flows, and middleware chains for Node.js and Next.js API routes.
+model: sonnet
 ---
 
 # Backend Architecture Skill

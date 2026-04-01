@@ -1,8 +1,9 @@
 ---
 name: testing
 description: >
-  Test architecture and implementation skill. Use when "set up tests", "write tests",
-  "improve coverage", "add E2E tests", "testing strategy".
+  Designs testing strategies using the Testing Diamond model. Covers unit, integration,
+  E2E, visual regression, and accessibility testing with coverage standards.
+model: sonnet
 ---
 
 # Testing Skill

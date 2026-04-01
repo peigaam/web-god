@@ -65,3 +65,12 @@
 | P1 — Degraded | Error rate > 5%, latency > 5s, partial outage | Slack + email | < 1 hour |
 | P2 — Warning | Error rate > 1%, CWV degraded, disk > 80% | Slack | < 1 day |
 | P3 — Info | Deployment completed, cron job status | Dashboard | Next standup |
+
+## 6. npm Supply Chain Defense
+
+- `npm audit` alone is insufficient — it only catches known CVEs, not malicious packages
+- Use Socket.dev or Snyk for real-time supply chain monitoring
+- Enable npm package provenance (`npm publish --provenance`)
+- Use lockfile-lint to verify lockfile integrity
+- Pin dependencies to exact versions in production
+- Monitor for typosquatting on critical packages

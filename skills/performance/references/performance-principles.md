@@ -17,6 +17,12 @@ Browser renders in this order:
 
 ## 2. Core Web Vitals Deep Dive
 
+**Note:** Google periodically tightens CWV thresholds. The values below reflect
+the official web.dev documentation as of early 2026. Always verify current thresholds
+at https://web.dev/vitals/ before setting project budgets. Some industry sources
+report tightened targets (INP 150ms, LCP 2.0s) but these have not been confirmed
+in official Google documentation.
+
 ### LCP (Largest Contentful Paint) — Loading
 What it measures: Time until the largest visible element renders.
 LCP elements: images, video posters, background images via url(), block-level text.

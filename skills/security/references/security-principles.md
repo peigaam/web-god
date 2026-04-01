@@ -2,22 +2,22 @@
 
 ---
 
-## 1. OWASP Top 10 (2021) — Quick Reference
+## 1. OWASP Top 10 (2025) — Quick Reference
 
-> Based on OWASP Top 10 2021. Check [owasp.org/Top10](https://owasp.org/www-project-top-ten/) for the latest version.
+> Based on OWASP Top 10 2025. Check [owasp.org/Top10](https://owasp.org/www-project-top-ten/) for the authoritative current list.
 
 | # | Vulnerability | Prevention |
 |---|---|---|
 | A01 | Broken Access Control | Auth on every endpoint, IDOR checks, CORS whitelist |
-| A02 | Cryptographic Failures | HTTPS, encrypt PII at rest, bcrypt for passwords |
-| A03 | Injection | Parameterized queries, input validation, output encoding |
-| A04 | Insecure Design | Threat modeling, security requirements, abuse cases |
-| A05 | Security Misconfiguration | Security headers, disable defaults, patch dependencies |
-| A06 | Vulnerable Components | npm audit, dependency updates, SCA scanning |
+| A02 | Security Misconfiguration | Security headers, disable defaults, patch dependencies |
+| A03 | Supply Chain Failures | Provenance verification, lockfile integrity, SCA scanning |
+| A04 | Cryptographic Failures | HTTPS, encrypt PII at rest, bcrypt for passwords |
+| A05 | Injection | Parameterized queries, input validation, output encoding |
+| A06 | Insecure Design | Threat modeling, security requirements, abuse cases |
 | A07 | Auth Failures | Rate limiting, MFA, secure session management |
 | A08 | Data Integrity Failures | Signed updates, CI/CD pipeline security, SRI |
 | A09 | Logging Failures | Structured logs, audit trails, alerting |
-| A10 | SSRF | URL validation, allowlists, network segmentation |
+| A10 | Exceptional Conditions | Graceful error handling, fail-secure defaults, input bounds |
 
 ## 2. Security Headers Reference
 
@@ -59,3 +59,20 @@ Permissions-Policy: camera=(), microphone=(), geolocation=(self)
 - Use different secrets per environment (dev ≠ staging ≠ production)
 - Audit secret access (who accessed what, when)
 - Revoke immediately on suspected compromise
+
+## 6. Next.js-Specific Security
+
+Next.js has had critical CVEs that the security agent must warn about:
+- **Middleware bypass** (CVE-2025-29927, CVSS 9.1) — `x-middleware-subrequest` header
+  bypasses all middleware including auth checks. Fixed in 15.2.3+.
+- **Server Component RCE** (CVSS 10.0) — RSC source exposure allowing remote code
+  execution in certain configurations. Verify `output: 'standalone'` is properly secured.
+- **Server Action CSRF** — Server Actions without proper origin checking are vulnerable
+  to cross-site request forgery. Always validate the Origin header.
+
+### Mitigation checklist
+- [ ] Pin Next.js to latest patch version
+- [ ] Verify middleware cannot be bypassed via headers
+- [ ] Server Actions validate Origin header
+- [ ] RSC payloads don't expose server-only code
+- [ ] `experimental.serverActions.bodySizeLimit` is set

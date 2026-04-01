@@ -1,25 +1,59 @@
 # web-god
 
-**All-in-one web development intelligence layer.** Specialized AI agents, orchestrator skills, deterministic tools, and reusable hooks that make Claude Code dramatically better at web development.
+**Drop-in web development intelligence for Claude Code.** Clone into any project —
+scrollytelling sites, web3 dashboards, SaaS apps, marketing pages — and get
+specialized AI agents that activate automatically based on what you're building.
 
-Not a framework. Not a boilerplate. A *knowledge layer* that gives your AI coding assistant domain-specific expertise, structured workflows, and deterministic validation.
+## What You Get
 
----
+**15 specialized agents** organized by what you're building:
 
-## Prerequisites
+| Building... | Agents That Activate | Depth |
+|---|---|---|
+| Any web project | Security, Performance, Testing, DevOps | Reference Expert |
+| Scrollytelling / narrative site | Director, Choreographer, Typographer, Compositor, Auditor | Full Pipeline (unique) |
+| Frontend app (React/Next.js) | Architect, Component Designer, Builder | Full Pipeline |
+| API / backend | API Architect | Reference Expert |
+| Component library | Design System Architect, Component Designer | Reference Expert |
+| Content / marketing site | SEO Auditor, Frontend Architect | Reference Expert |
 
-- **Node.js 18+** (for CLI tools and dom-auditor)
-- **Claude Code** (recommended — agents auto-activate via description matching)
-- **Playwright** (optional — required for dom-auditor and scrollytelling test suites)
+**Plus:** 9 orchestrator skills, deep reference docs per domain, a DOM spatial
+auditor, a build integrity gate, Playwright test templates, SSR-safe React hooks,
+and git hooks.
 
-## Quick Start
+## Install
 
 ```bash
+# Clone anywhere (not INTO your project — web-god installs globally)
 git clone https://github.com/inspectre/web-god.git
 cd web-god && bash install.sh
 ```
 
-This copies agents to `~/.claude/agents/` and skills to `~/.claude/skills/`. Agents auto-activate when Claude Code detects matching prompts.
+This installs agents, skills, and a global rule to `~/.claude/`. They activate
+automatically in EVERY project you open with Claude Code. Your existing project
+CLAUDE.md files are never touched.
+
+No per-project configuration needed. Open Claude Code in any project and go.
+
+## What Makes This Different
+
+The scrollytelling pipeline is the crown jewel — 5 agents grounded in cognitive
+science (Duarte's Resonate methodology, Gestalt principles, attention bottleneck
+research) producing Awwwards-grade scroll-driven experiences. No comparable system
+exists in the 63,000+ agent skill ecosystem.
+
+The other domains (security, performance, testing, etc.) are honest reference
+experts — deep knowledge bases with auto-activating agent wrappers. They're not
+full pipelines, but they encode real expertise that makes Claude Code significantly
+better at web development tasks.
+
+Compatible with the [Agent Skills open standard](https://agentskills.io).
+Works with Claude Code, Codex CLI, Gemini CLI, and other compatible tools.
+
+## Prerequisites
+
+- **Node.js 18+** (for CLI tools and dom-auditor)
+- **Playwright** (optional — required for dom-auditor and scrollytelling test suites)
 
 ## Architecture
 
@@ -58,7 +92,7 @@ Expert knowledge auto-activated by Claude Code, backed by deep reference docs. T
 | **SEO** | seo-auditor | `seo` | Structured data, meta tags, crawlability |
 | **Testing** | test-architect | `testing` | Testing Diamond, coverage standards, flaky test protocol |
 | **DevOps** | deploy-planner | `devops` | 12-factor app, CI/CD pipeline design, migration safety |
-| **Design System** | token-architect | `design-system` | Token hierarchy, spacing scale, dark mode strategy |
+| **Design System** | design-system-architect | `design-system` | Token hierarchy, spacing scale, dark mode strategy |
 
 ## Standalone Tools
 

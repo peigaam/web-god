@@ -6,10 +6,10 @@ Cognitive science grounding, perceptual grammar rules, and performance budgets f
 
 ## 1. The Attentional Bottleneck
 
-- **Conscious processing bandwidth:** ~50 bits/sec (Miller, Broadbent, decades of psychophysics confirmation)
+- **Conscious processing bandwidth:** Classical models cite ~50 bits/sec (Miller, Broadbent). Recent research (Meister & Zheng, Caltech 2024) suggests conscious decision-making may operate at ~10 bits/sec. Either figure validates sequential disclosure as the optimal scroll strategy — the bottleneck is real and severe regardless of exact measurement.
 - **Pre-attentive processing window:** 200-250ms for parallel pattern recognition (Gestalt grouping, motion detection, color salience)
 - **Working memory capacity:** 4-7 chunks (Miller's Law); scenes must not present more simultaneous elements than this
-- **Implication:** Every visual element competes for the 50 bits/sec channel. Elements that do not serve the narrative steal bandwidth from elements that do.
+- **Implication:** Every visual element competes for the conscious attention channel. Elements that do not serve the narrative steal bandwidth from elements that do.
 
 ## 2. Duarte's Resonate Methodology (Digital Adaptation)
 

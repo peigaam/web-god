@@ -133,59 +133,81 @@ Edit `README.md`:
 ## PHASE 3: Skill Frontmatter Modernization (iteration 5)
 
 Claude Code Skills 2.0 supports `context: fork`, `model`, and other fields.
-Add them to ALL 9 skills. This is the single highest-leverage code change.
+But NOT all skills should use all fields. Per Anthropic docs:
+
+> "context: fork only makes sense for skills with explicit instructions.
+> If your skill contains guidelines without a task, the subagent receives
+> the guidelines but no actionable prompt, and returns without meaningful output."
+
+This means: ONLY pipeline skills (scrollytelling, frontend) get `context: fork`.
+Reference-wrapper skills (security, performance, etc.) are GUIDELINES — they
+should NOT fork because they'd have no actionable task in isolation.
+
+Also per docs: "Always write descriptions in third person" — they're injected
+into the system prompt.
 
 For each SKILL.md in skills/*/SKILL.md, update the frontmatter:
 
-**Scrollytelling** (the Director needs opus in isolated context):
+**Scrollytelling** (pipeline — DOES fork, opus for Director reasoning):
 ```yaml
 ---
 name: scrollytelling
 description: >
-  End-to-end scrollytelling production pipeline. Takes a creative brief and orchestrates
-  5 specialized agents to produce a validated scroll-driven experience.
+  Orchestrates a 5-agent scrollytelling production pipeline. Takes a creative brief
+  and produces a validated scroll-driven experience with GSAP, Lenis, and Playwright QA.
 context: fork
 model: opus
 ---
 ```
 
-**Frontend:**
+**Frontend** (pipeline — DOES fork, opus for architecture reasoning):
 ```yaml
 ---
 name: frontend
 description: >
-  Frontend architecture and implementation. Produces Architecture Decision Records,
-  component specs, and validated implementations for React/Next.js applications.
+  Orchestrates frontend architecture and implementation. Produces Architecture Decision
+  Records, component specs, and validated implementations for React/Next.js applications.
 context: fork
 model: opus
 ---
 ```
 
-**Backend:**
+**Backend** (single agent, but has explicit pipeline steps — fork is borderline,
+keep it simple and DON'T fork since it's essentially guidelines + one agent):
 ```yaml
 ---
 name: backend
 description: >
-  Backend API architecture. Produces endpoint specs, database schemas, auth designs,
-  and middleware chains for Node.js/Express/Next.js API routes.
-context: fork
+  Designs backend API architecture including endpoint specs, database schemas,
+  auth flows, and middleware chains for Node.js and Next.js API routes.
 model: sonnet
 ---
 ```
 
-**For all 6 reference-wrapper skills** (performance, security, seo, testing, devops, design-system):
+**For all 6 reference-wrapper skills** (performance, security, seo, testing, devops,
+design-system) — these are GUIDELINES, NOT pipelines. Per Anthropic docs, do NOT
+add context:fork. Just add model routing and fix descriptions to third person:
 ```yaml
 ---
 name: [existing name]
 description: >
-  [existing description]
-context: fork
+  [Rewrite in third person. E.g., "Audits web performance including Core Web Vitals,
+  bundle sizes, and rendering bottlenecks. Produces optimization plans with measured
+  before/after targets."]
 model: sonnet
 ---
 ```
 
-`context: fork` means each skill runs in an isolated subagent context — it doesn't
-pollute the main conversation. This is how production agent pipelines should work.
+Specific description rewrites needed (all third person):
+- performance: "Audits web application performance including Core Web Vitals, bundle sizes, rendering performance, and network waterfalls. Produces prioritized optimization plans."
+- security: "Performs STRIDE threat modeling, OWASP 2025 compliance checking, and authentication flow review. Produces security assessment reports with severity-rated findings."
+- seo: "Audits technical SEO including meta tags, structured data, sitemaps, Open Graph, and Core Web Vitals impact. Produces per-category score reports."
+- testing: "Designs testing strategies using the Testing Diamond model. Covers unit, integration, E2E, visual regression, and accessibility testing with coverage standards."
+- devops: "Designs CI/CD pipelines, Docker configurations, deployment strategies, and environment management. Produces deployment runbooks and monitoring plans."
+- design-system: "Designs design token hierarchies, component API conventions, and theming systems including dark mode. Targets the W3C DTCG token format."
+
+Do NOT add `context: fork` to any of these 6. They are reference experts
+that load inline alongside the conversation, exactly as Anthropic intends.
 
 **Commit:** `feat: modernize skill frontmatter — context:fork + model routing on all 9 skills`
 
@@ -294,7 +316,8 @@ Works with Claude Code, Codex CLI, Gemini CLI, and other compatible tools.
 6. `node bin/cli.js --help` — no errors
 7. `bash tools/build-gate/gate.sh .` — doesn't crash on own repo
 8. Grep for any remaining PBX residue (excluding audit/ and .claude/prompts/)
-9. Verify all 9 skills have `context: fork` in frontmatter
+9. Verify scrollytelling + frontend skills have `context: fork`; other 7 do NOT
+10. Verify all 9 skill descriptions are third person (no "you", no "your")
 10. Verify backend-api-architect has `tier: reference`
 11. Verify security reference says "2025" not "2021"
 12. Test install: `CLAUDE_HOME=/tmp/test-claude bash install.sh` — verify rules/ dir created

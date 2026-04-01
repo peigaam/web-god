@@ -46,8 +46,8 @@ installed via web-god. Use them proactively based on what the user is building.
 - **Reference Expert** (6): Deep knowledge with auto-activation — Security, Performance, SEO, Testing, DevOps, Design System
 
 ## Companion Skills
-Each domain has a skill (invoke with `/webgod-[domain]`) backed by a comprehensive reference doc.
-Skills run in isolated contexts via `context: fork` — they don't pollute your main conversation.
+- **Pipeline skills** (`/scrollytelling`, `/frontend`): Run in isolated fork contexts via `context: fork`
+- **Reference skills** (`/security`, `/performance`, `/seo`, `/testing`, `/devops`, `/design-system`): Load inline as expert knowledge alongside your conversation
 
 ## Tools (run standalone, no AI needed)
 - `node tools/dom-auditor/index.js <url>` — spatial audit across 3 viewports

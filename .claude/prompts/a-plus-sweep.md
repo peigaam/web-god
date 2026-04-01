@@ -18,81 +18,28 @@ Read `audit/07-final-verdict.md` and `audit/10-deep-research-intelligence.md` fi
 
 ---
 
-## PHASE 1: CLAUDE.md — The Activation Layer (iteration 1)
+## PHASE 1: Global Rule — The Activation Layer (iteration 1)
 
-This is the highest-leverage file in the entire repo. When someone clones web-god into
-a project and opens Claude Code, CLAUDE.md determines what happens.
+CRITICAL ARCHITECTURE: web-god does NOT use project-level CLAUDE.md for activation.
+Users will clone web-god into projects that ALREADY have their own CLAUDE.md (describing
+their project's stack, conventions, etc.). web-god must not clobber that.
 
-Rewrite `.claude/CLAUDE.md` to be project-type-aware:
+Instead, web-god installs a GLOBAL RULE at `~/.claude/rules/common/web-god.md`.
+Claude Code loads global rules ALONGSIDE any project CLAUDE.md — no conflict.
 
-```markdown
-# web-god — Web Development Intelligence Layer
+The rule file is already created at `rules/web-god.md` and install.sh copies it.
+Review `rules/web-god.md` and ensure it contains project-type-aware activation.
 
-Drop-in toolkit: 15 specialized agents, 9 skills, reference-grade knowledge bases,
-and deterministic tools. Works in any web project.
+The existing `.claude/CLAUDE.md` stays — it describes the web-god repo itself (for
+contributors working ON web-god). It does NOT get installed into user projects.
 
-## How This Works
+Verify:
+1. `rules/web-god.md` exists and contains project-type-aware agent activation
+2. `install.sh` copies `rules/web-god.md` to `~/.claude/rules/common/web-god.md`
+3. `.claude/CLAUDE.md` describes the web-god repo itself (for contributors), NOT for end users
+4. No step in install.sh touches any project-level `.claude/CLAUDE.md`
 
-When you open Claude Code in a project with web-god installed, agents auto-activate
-based on what you ask. You don't need to configure anything.
-
-### For ANY web project (always active)
-- **Frontend Architect** — component structure, state management, rendering strategy
-- **Security Threat Modeler** — STRIDE analysis, auth review, OWASP 2025 compliance
-- **Performance Profiler** — Core Web Vitals audit, bundle optimization, image strategy
-- **Test Architect** — testing strategy, coverage standards, CI integration
-- **DevOps Deploy Planner** — CI/CD, Docker, environment management
-
-### For scrollytelling / narrative sites (activate when relevant)
-- **Full 5-agent pipeline**: Director → Choreographer → Typographer → Compositor → Auditor
-- Invoke with: "Build a scrollytelling page for [brief]"
-- Stack: GSAP ScrollTrigger + Lenis smooth scroll
-
-### For component libraries / design systems
-- **Design System Architect** — 3-tier tokens (primitive → semantic → component), dark mode
-- **Component Designer** — prop interfaces, composition patterns, a11y contracts
-
-### For content / marketing sites
-- **SEO Auditor** — meta tags, JSON-LD structured data, sitemap, Core Web Vitals
-
-### For API-driven apps
-- **Backend API Architect** — REST design, database schema, auth flows, error handling
-
-## Quick Start Prompts
-```
-"Review the architecture of this project"           → Frontend Architect
-"Audit this for security vulnerabilities"            → Security Threat Modeler
-"Optimize the performance of this app"               → Performance Profiler
-"Design a testing strategy for this codebase"        → Test Architect
-"Set up CI/CD for this project"                      → DevOps Deploy Planner
-"Build a scrollytelling landing page"                → Scrollytelling Pipeline
-"Create a design token system"                       → Design System Architect
-"Design the API for [feature]"                       → Backend API Architect
-"Audit the SEO of this site"                         → SEO Auditor
-```
-
-## Agent Tiers
-- **Core Pipeline** (9 agents): Scrollytelling (5) + Frontend (3) + Backend (1)
-  Full multi-agent orchestration with chained outputs
-- **Reference Experts** (6 agents): Security, Performance, SEO, Testing, DevOps, Design System
-  Deep knowledge bases with auto-activation — each backed by a comprehensive reference doc
-
-## Tools (run without AI)
-- `node tools/dom-auditor/index.js <url>` — 5-check spatial audit across 3 viewports
-- `bash tools/build-gate/gate.sh <dir>` — build integrity gate (orphan imports, kill list, build, DOM)
-
-## Structure
-- `agents/` — 15 Claude Code agents (YAML frontmatter + markdown)
-- `skills/` — 9 orchestrator skills with reference docs
-- `examples/react-hooks/` — 10 SSR-safe React hooks (companion code)
-- `hooks/git/` — pre-commit, pre-push, commit-msg hooks
-- `tools/` — standalone CLI scripts + Playwright test templates
-```
-
-This CLAUDE.md does three things the current one doesn't:
-1. Shows agents organized BY USE CASE, not by domain
-2. Gives copy-paste quick start prompts
-3. Makes it clear what activates for what project type
+**Commit:** `feat: global rule activation — web-god loads via rules/common, not project CLAUDE.md`
 
 ---
 
@@ -306,15 +253,16 @@ and git hooks.
 ## Install
 
 ```bash
-# Clone into your project
-git clone https://github.com/inspectre/web-god.git .web-god
-
-# Install agents + skills into Claude Code
-cd .web-god && bash install.sh
+# Clone anywhere (not INTO your project — web-god installs globally)
+git clone https://github.com/inspectre/web-god.git
+cd web-god && bash install.sh
 ```
 
-Then open Claude Code in your project. Agents auto-activate based on your prompts.
-No configuration needed.
+This installs agents, skills, and a global rule to `~/.claude/`. They activate
+automatically in EVERY project you open with Claude Code. Your existing project
+CLAUDE.md files are never touched.
+
+No per-project configuration needed. Open Claude Code in any project and go.
 
 ## What Makes This Different
 
@@ -340,15 +288,18 @@ Works with Claude Code, Codex CLI, Gemini CLI, and other compatible tools.
 
 1. `find . -type f -not -path './.git/*' -not -name '.DS_Store' | wc -l` — count files
 2. Verify README inventory matches actual counts
-3. Verify CLAUDE.md quick start prompts reference correct agent names
-4. `node bin/cli.js --help` — no errors
-5. `bash tools/build-gate/gate.sh .` — doesn't crash on own repo
-6. Grep for any remaining PBX residue (excluding audit/ and .claude/prompts/)
-7. Verify all 9 skills have `context: fork` in frontmatter
-8. Verify backend-api-architect has `tier: reference`
-9. Verify security reference says "2025" not "2021"
+3. Verify `rules/web-god.md` exists and has project-type-aware activation
+4. Verify `install.sh` copies rules to `~/.claude/rules/common/web-god.md`
+5. Verify `.claude/CLAUDE.md` describes the web-god repo (NOT end-user activation)
+6. `node bin/cli.js --help` — no errors
+7. `bash tools/build-gate/gate.sh .` — doesn't crash on own repo
+8. Grep for any remaining PBX residue (excluding audit/ and .claude/prompts/)
+9. Verify all 9 skills have `context: fork` in frontmatter
+10. Verify backend-api-architect has `tier: reference`
+11. Verify security reference says "2025" not "2021"
+12. Test install: `CLAUDE_HOME=/tmp/test-claude bash install.sh` — verify rules/ dir created
 
-**Final commit:** `chore: A+ sweep complete — factually current, properly wired, clone-ready`
+**Final commit:** `chore: A+ sweep complete — factually current, rules-based activation, clone-ready`
 
 ---
 

@@ -10,7 +10,17 @@ echo "║         web-god installer v0.1.0         ║"
 echo "╚══════════════════════════════════════════╝"
 echo ""
 
-mkdir -p "$AGENTS_DIR" "$SKILLS_DIR"
+RULES_DIR="$CLAUDE_DIR/rules/common"
+
+mkdir -p "$AGENTS_DIR" "$SKILLS_DIR" "$RULES_DIR"
+
+# Install global rule (loads in EVERY project alongside project CLAUDE.md)
+echo ">> Installing web-god rule..."
+if [ -f "$SCRIPT_DIR/rules/web-god.md" ]; then
+  cp "$SCRIPT_DIR/rules/web-god.md" "$RULES_DIR/web-god.md"
+  echo "   ✅ Installed global rule (activates web-god agents in all projects)"
+fi
+echo ""
 
 echo ">> Installing agents..."
 AGENT_COUNT=0

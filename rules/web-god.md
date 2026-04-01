@@ -6,6 +6,8 @@ installed via web-god. Use them proactively based on what the user is building.
 ## Available Agents (auto-activate based on context)
 
 ### Always Relevant (any web project)
+- `narrative-strategist` — audience awareness diagnosis, emotional arcs, story architecture, section structure
+- `web-copywriter` — headlines, CTAs, value props, microcopy, error messages, UX writing
 - `frontend-architect` — component structure, state management, rendering strategy, ADRs
 - `frontend-builder` — implementation patterns, data fetching, Server Components, build order
 - `security-threat-modeler` — STRIDE analysis, OWASP 2025, auth review, Next.js CVEs
@@ -31,6 +33,8 @@ installed via web-god. Use them proactively based on what the user is building.
 
 ## Quick Invocation Prompts
 ```
+"Plan the narrative for this landing page"           → narrative-strategist
+"Write the copy for this page"                       → web-copywriter
 "Review the architecture of this project"           → frontend-architect
 "Audit this for security vulnerabilities"            → security-threat-modeler
 "Optimize the performance"                           → performance-profiler
@@ -42,7 +46,7 @@ installed via web-god. Use them proactively based on what the user is building.
 ```
 
 ## Agent Tiers
-- **Core Pipeline** (9): Full multi-agent orchestration — Scrollytelling (5), Frontend (3), Backend (1)
+- **Core Pipeline** (11): Full multi-agent orchestration — Scrollytelling (5), Frontend (3), Narrative (1), Copywriting (1), Backend (1)
 - **Reference Expert** (6): Deep knowledge with auto-activation — Security, Performance, SEO, Testing, DevOps, Design System
 
 ## Companion Skills

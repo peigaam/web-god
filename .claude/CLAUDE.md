@@ -1,6 +1,6 @@
 # web-god
 
-Web development intelligence layer: 15 specialized agents, 9 orchestrator skills,
+Web development intelligence layer: 17 specialized agents, 11 orchestrator skills,
 deterministic tools, and production React hook examples.
 
 ## Structure
@@ -13,7 +13,7 @@ deterministic tools, and production React hook examples.
 - docs/ — Agent invocation guide and contributor docs
 
 ## Agent Tiers
-- **Core Pipeline Agents** (9): Scrollytelling (5) + Frontend (3) + Backend (1)
+- **Core Pipeline Agents** (11): Scrollytelling (5) + Frontend (3) + Narrative (1) + Copywriting (1) + Backend (1)
   → Full orchestrated pipelines with multi-agent chaining
 - **Reference Wrapper Agents** (6): Performance, Security, SEO, Testing, DevOps, Design System
   → Expert knowledge auto-activated by Claude Code, backed by deep reference docs

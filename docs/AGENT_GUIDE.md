@@ -48,6 +48,35 @@ Key features: [feature list]
 Stack preference: [Next.js App Router / Remix / Vite+React]
 ```
 
+### Narrative Strategy (1 agent)
+
+| Agent | Prompt | When |
+|-------|--------|------|
+| `narrative-strategist` | "Plan the narrative for this [landing page / product / site]" | Before any copy is written — designs the story architecture |
+
+**Full prompt:**
+```
+Plan the narrative strategy for [product/project].
+Audience: [who they are, what they know about the problem]
+Product: [what it does]
+Business objective: [signup, purchase, awareness]
+Available assets: [screenshots, testimonials, data, video]
+```
+
+### Web Copywriting (1 agent)
+
+| Agent | Prompt | When |
+|-------|--------|------|
+| `web-copywriter` | "Write the copy for [page / component / flow]" | After narrative architecture is decided, or directly for microcopy |
+
+**Invocation examples:**
+```
+"Write headlines and CTAs for the landing page using this narrative brief"
+"Write error messages and empty states for the dashboard"
+"Write the product description for [product] targeting [audience]"
+"Write onboarding copy for the first-run experience"
+```
+
 ### Backend (1 agent)
 
 | Agent | Prompt | When |

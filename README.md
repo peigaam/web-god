@@ -6,18 +6,19 @@ specialized AI agents that activate automatically based on what you're building.
 
 ## What You Get
 
-**15 specialized agents** organized by what you're building:
+**17 specialized agents** organized by what you're building:
 
 | Building... | Agents That Activate | Depth |
 |---|---|---|
-| Any web project | Security, Performance, Testing, DevOps | Reference Expert |
+| Any web project | Narrative Strategist, Copywriter, Security, Performance, Testing, DevOps | Core + Reference |
 | Scrollytelling / narrative site | Director, Choreographer, Typographer, Compositor, Auditor | Full Pipeline (unique) |
 | Frontend app (React/Next.js) | Architect, Component Designer, Builder | Full Pipeline |
+| Landing page / marketing | Narrative Strategist, Copywriter, Frontend Architect | Full Pipeline |
 | API / backend | API Architect | Reference Expert |
 | Component library | Design System Architect, Component Designer | Reference Expert |
-| Content / marketing site | SEO Auditor, Frontend Architect | Reference Expert |
+| Dashboard / web3 | Copywriter (microcopy), Frontend Architect | Glanceability mode |
 
-**Plus:** 9 orchestrator skills, deep reference docs per domain, a DOM spatial
+**Plus:** 11 orchestrator skills, deep reference docs per domain, a DOM spatial
 auditor, a build integrity gate, Playwright test templates, SSR-safe React hooks,
 and git hooks.
 
@@ -37,15 +38,13 @@ No per-project configuration needed. Open Claude Code in any project and go.
 
 ## What Makes This Different
 
-The scrollytelling pipeline is the crown jewel — 5 agents grounded in cognitive
-science (Duarte's Resonate methodology, Gestalt principles, attention bottleneck
-research) producing Awwwards-grade scroll-driven experiences. No comparable system
-exists in the 63,000+ agent skill ecosystem.
+Two things no other package does:
 
-The other domains (security, performance, testing, etc.) are honest reference
-experts — deep knowledge bases with auto-activating agent wrappers. They're not
-full pipelines, but they encode real expertise that makes Claude Code significantly
-better at web development tasks.
+1. **Scrollytelling pipeline** — 5 agents grounded in cognitive science (Duarte sparkline, Gestalt principles, 10 bits/sec attention bottleneck) producing Awwwards-grade scroll-driven experiences.
+
+2. **Narrative strategy + copywriting** — Schwartz awareness diagnosis, Sutherland psycho-logic, StoryBrand structure, and a complete UX writing toolkit (Handley/Clark/Wiebe operational rules) that work for ANY project — landing pages, dashboards, web3, e-commerce, API docs.
+
+The other domains (security, performance, testing, etc.) are reference experts — deep knowledge with auto-activation.
 
 Compatible with the [Agent Skills open standard](https://agentskills.io).
 Works with Claude Code, Codex CLI, Gemini CLI, and other compatible tools.
@@ -59,8 +58,8 @@ Works with Claude Code, Codex CLI, Gemini CLI, and other compatible tools.
 
 ```
 web-god/
-├── agents/              # 15 specialized AI agents (Claude Code format)
-├── skills/              # 9 orchestrator skills that chain agents into pipelines
+├── agents/              # 17 specialized AI agents (Claude Code format)
+├── skills/              # 11 orchestrator skills that chain agents into pipelines
 ├── tools/               # Standalone CLI scripts — run without AI
 ├── examples/react-hooks/# SSR-safe React hooks for common patterns
 ├── hooks/git/           # Pre-configured git hooks (Husky-compatible)
@@ -71,12 +70,14 @@ web-god/
 
 ## Agent Tiers
 
-### Core Pipeline Agents (9 agents)
+### Core Pipeline Agents (11 agents)
 
 Full orchestrated pipelines with multi-agent chaining. These agents produce distinct artifacts that feed into the next agent.
 
 | Domain | Agents | Skill | Pipeline |
 |--------|--------|-------|----------|
+| **Narrative** | narrative-strategist | `narrative` | Awareness diagnosis → Big Idea → Sparkline → Section brief |
+| **Copywriting** | web-copywriter | `copywriting` | VoC research → Headlines/CTAs/Body → Squawk Test |
 | **Scrollytelling** | director, choreographer, typographer, compositor, auditor | `scrollytelling` | Brief → Storyboard → Animation spec → Type system → Composition → Validation |
 | **Frontend** | architect, component-designer, builder | `frontend` | ADR → Component specs → Implementation |
 | **Backend** | api-architect | `backend` | API spec + DB schema + Auth design → Implementation |
